@@ -30,9 +30,12 @@ public class DetailsController {
 		return new ResponseEntity<>(name,HttpStatus.OK);
 	}
 	
+	
+	// Fetch All employee list from postgress remote database
 	@GetMapping(path="empList", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Object> getAllEmployees(){
 		java.util.List<Employee> empList = detailsService.getAllEmployee();
+		System.out.println("Employee List: "+empList);
 		return new ResponseEntity<>(empList, HttpStatus.OK);
 	}
 	
